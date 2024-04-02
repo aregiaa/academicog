@@ -8,10 +8,9 @@ class Cidade(models.Model):
         return f"{self.nome}, {self.uf}"
     
 class Ocupacoe(models.Model):
-    nome = models.CharField
-
+    nome = models.CharField(max_length=100)
     def __str__(self):
-        return f'{self.nome}'
+        return self.nome
     
 class Instituicoe(models.Model):
     cidade = models.ForeignKey(Cidade, on_delete=models.CASCADE)
